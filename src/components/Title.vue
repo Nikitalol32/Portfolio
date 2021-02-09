@@ -43,6 +43,5 @@ export default {
 		font-weight: 800;
 		font-size: 37px;
 		letter-spacing: 3px;
-		
 	}
 </style>
