@@ -2,9 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/view/Home'
 import About from '@/view/About'
-import Project from '@/view/Project'
+import Portfolio from '@/view/Portfolio'
 import Contact from '@/view/Contact'
-import Blog from '@/view/Blog'
 
 Vue.use(Router);
 
@@ -17,21 +16,15 @@ export const routes = {
 		path: '/about',
 		component: About
 	},
-	project: {
-		path: '/project',
-		component: Project
+	portfolio: {
+		path: '/portfolio',
+		component: Portfolio
 	},
 	contact: {
 		path: '/contact',
 		component: Contact
-	},
-	blog: {
-		path: '/blog',
-		component: Blog
 	}
 }
-
-// Object.keys(routes) -> ['about']
 
 export default new Router({
 	mode: 'history',

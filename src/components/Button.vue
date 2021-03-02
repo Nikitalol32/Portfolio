@@ -1,11 +1,19 @@
 <template>
-	<a href='#' class="button">
+	<a
+		v-bind:href = 'button'
+		class="button"
+	>
 		<slot></slot>
 	</a>
 </template>
 
 <script>
 export default {
+	props: {
+		button:{
+			type: String
+		}
+	}
 	
 }
 </script>
@@ -25,6 +33,7 @@ export default {
 		text-transform: uppercase;
 		font-weight: 700;
 		z-index: 1;
+		cursor: pointer;
 	}
 
 	.button::before {
@@ -33,18 +42,27 @@ export default {
 		background-color:rgb(252, 83, 86);
 		content: '';
 		position: absolute;
-		/* left: -100%; */
 		transform: translateX(-100%);
 		top: 0;
 		right: 0;
 		z-index: -1;
-		transition-timing-function: ease;
-		transition-duration: .5s
 	}
 
-	.button:hover:before {
-		transform: translateX(0);
-		/* left: 0; */
-		transition-duration: .5s
+	.button:hover::before{
+		animation: button .5s ease-out forwards;
+	}
+	@keyframes button {
+		0% {
+			transform: translateX(-100%);
+		}
+		50% {
+			transform: translateX(0);
+		}
+		80% {
+			transform: translateX(-13px)
+		}
+		100% {
+			transform: translateX(0)
+		}
 	}
 </style>

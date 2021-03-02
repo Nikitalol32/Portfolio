@@ -1,6 +1,7 @@
 <template>
-	<div class='home-page' id='app'>
+	<div id='app'>
 		<Navigation/>
+
 		<router-view/>
 	</div>
 </template>
@@ -11,29 +12,50 @@ import Navigation from '@/components/Navigation.vue'
 export default {
 	name: 'App',
 	components: {
-		Navigation
+		Navigation,
+	},
+	methods: {
 	}
 }
 </script>
 
 <style>
-@font-face {
-	font-family: Quicksand;
-	src: url('assets/fonts/Quicksand-VariableFont.ttf') format("truetype");
-}
+	@font-face {
+		font-family: Quicksand;
+		src: url('assets/fonts/Quicksand-Regular.ttf') format("truetype");
+	}
 
-* {
-	padding: 0;
-	margin: 0;
-	font-family: Quicksand, sans-serif;
-}
+	* {
+		padding: 0;
+		margin: 0;
+		font-family: Quicksand, sans-serif;
+	}
 
-.home-page {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	align-items: center;
-	height: 100vh;
-	background-color:#111;
-}
+	#app {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		min-height: 100vh;
+		background-color:#111;
+		position: relative;
+	}
+
+	.bg-layer {
+		opacity: 0;
+		z-index: -1;
+		position: absolute;
+		background-color: #111;
+		transition: opacity .4s ease-in-out;
+	}
+
+	@media(max-width: 1250px) {
+		.active {
+			background-color: #111;
+			width: 100%;
+			height: 100%;
+			opacity: .85;
+			z-index: 3;
+		}
+	}
+
 </style>

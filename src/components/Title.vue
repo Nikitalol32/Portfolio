@@ -1,7 +1,7 @@
 <template>
 	<div class='titles'>
-		<h5 class='subtitle'>{{ subtitle }}</h5>
-		<h1 class='title'>{{ title }}</h1>
+		<slot name = 'subtitle'></slot>
+		<slot name = 'title'></slot>
 	</div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
-		align-items: flex-start;
+		align-items: center;
 	}
 
 	.subtitle {
@@ -32,7 +32,7 @@ export default {
 		background: #fc5356;
 		padding: 5px 15px;
 		display: inline-block;
-		font-size: 14px;
+		font-size: 16px;
 		color: #fff;
 		border-radius: 4px;
 	}
@@ -41,7 +41,8 @@ export default {
 		text-transform: uppercase;
 		margin: 10px 0;
 		font-weight: 800;
-		font-size: 37px;
+		font-size: 48px;
 		letter-spacing: 3px;
+		color: #fff;
 	}
 </style>
