@@ -14,18 +14,16 @@
 			</div>
 			<img src='' class="overview__img" alt='image' ref='overviewImg'>
 		</div>
-		<Title class='portfolio-page__titles'>
+		<Title>
 			<h2 slot='title' class='title'>Portfolio</h2>
 			<h5 slot='subtitle' class='subtitle'>See My Works</h5>
 		</Title>
 		<div class='portfolio-page__content'>
-			{{ w.console.log(w.performance.now()) }}
 			<PortfolioItem
 				v-for= '(portfolioItem, i) in portfolioItems'
 				:key= 'i'
 				v-bind:portfolioItem = 'portfolioItem'
 			/>
-			{{ w.console.log(w.performance.now()) }}
 
 		</div>
 	</div>
@@ -34,7 +32,7 @@
 <script>
 import Title from '@/components/Title'
 import PortfolioItem from '@/components/Portfolio-item'
-import scrollLock from 'scroll-lock';
+import scrollLock from 'scroll-lock'
 
 export default {
 	data() {
@@ -172,6 +170,8 @@ export default {
 	}
 
 	.overview__img {
+		max-width: 400px;
+		width: 90%;
 		object-fit: cover;
 		margin: 0 auto;
 		opacity: 0;

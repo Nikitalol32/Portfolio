@@ -3,9 +3,9 @@
 		class='about-page'
 		ref='about'
 	>
-		<Title style='align-items: center;'>
+		<Title>
 			<h5 slot='subtitle' class='subtitle'>See my Resume</h5>
-			<h1 slot='title' class='title'>about</h1>
+			<h1 slot='title' class='title'>about me</h1>
 		</Title>
 		<div
 			class='about-me'
@@ -14,23 +14,19 @@
 			<img src='../assets/img/Nikish.jpg' class='about-me__avatar'>
 			<div class='about-me__info'>
 				<p class='about-me__bio'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero non ex quasi illum aut modi assumenda dicta adipisci tenetur facilis, hic magni cupiditate eligendi laboriosam consequuntur illo eius architecto? Sequi?</p>
-				<div class='about-me__full-info'>
-					<ul class='full-info'>
-						<li class='full-info__item'>Birthday : 26 November 2000</li>
-						<li class='full-info__item'>Age : 20</li>
-						<li class='full-info__item'>Profession : Frontend developer</li>
-						<li class='full-info__item'>Country : Russia</li>
-						<li class='full-info__item'>Address : Balashiha, Russia</li>
-						<li class='full-info__item'>Nationality : Russian</li>
-						<li class='full-info__item'>E-mail : nikita3210@list.ru</li>
-						<li class='full-info__item'>Phone : 8(977)327-**-**</li>
-						<li class='full-info__item'>Skype : i don't have skype</li>
-						<li class='full-info__item'>Language : Russian, English</li>
-					</ul>
-				</div>
-				<Button
-					v-bind:button = '"#"'
-				>
+				<ul class='about-me__full-info'>
+					<li class='full-info__item'>Birthday : 26 November 2000</li>
+					<li class='full-info__item'>Age : 20</li>
+					<li class='full-info__item'>Profession : Frontend developer</li>
+					<li class='full-info__item'>Country : Russia</li>
+					<li class='full-info__item'>Address : Balashiha, Russia</li>
+					<li class='full-info__item'>Nationality : Russian</li>
+					<li class='full-info__item'>E-mail : nikita3210@list.ru</li>
+					<li class='full-info__item'>Phone : 8(977)327-**-**</li>
+					<li class='full-info__item'>Skype : i don't have skype</li>
+					<li class='full-info__item'>Language : Russian, English</li>
+				</ul>
+				<Button>
 					Download CV
 				</Button>
 			</div>
@@ -179,7 +175,6 @@ export default {
 		align-items: center;
 		max-width: 1250px;
 		width: 100%;
-		padding-top: 45px;
 	}
 
 	.about-me {
@@ -192,7 +187,6 @@ export default {
 	.about-me__info {
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-start;
 		align-items: flex-start;
 		width: 100%;
 		padding: 35px 0 0 50px
@@ -207,7 +201,6 @@ export default {
 
 	.about-me__bio {
 		font-size: 17px;
-		font-weight: 500;
 		line-height: 1.8;
 		max-width: 480px;
 		margin-bottom: 25px;
@@ -218,15 +211,10 @@ export default {
 		display: flex;
 		width: 100%;
 		margin-bottom: 35px;
-	}
-
-	.full-info {
-		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		flex-wrap: wrap;
 		height: 200px;
-		width: 100%;
 		
 	}
 
@@ -246,24 +234,24 @@ export default {
 
 	.my-skills__title {
 		margin-bottom: 50px;
+		letter-spacing: 4px;
+		font-size: 24px;
 	}
 
 	.experience {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		align-items: center;
-		flex-wrap: wrap;
 	}
 
 	.experience__title {
+		margin-bottom: 50px;
+		letter-spacing: 4px;
 		font-size: 24px;
-		margin-bottom: 40px;
 	}
 
 	.experience__items {
 		display: flex;
-		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: space-evenly;
 		width: 90%;
@@ -278,39 +266,28 @@ export default {
 			max-width: 100%;
 		}
 
-		.about-me__bio {
-			padding-right: 10px;
-		}
-
 		.about-me {
 			flex-direction: column;
 		}
 
 		.about-me__info {
 			width: unset;
-			padding: 35px 0 0 10px;
-		}
-
-		.my-skills {
+			padding-left: 0;
 		}
 
 	}
 
 	@media (max-width: 875px) {
 
-	.about-me__avatar {
-		max-width: 900px;
-	}
+		.about-me__full-info {
+			flex-wrap: nowrap;
+			width: unset;
+			height: auto;
+		}
 
-	.full-info {
-		flex-wrap: nowrap;
-		width: unset;
-		height: auto;
-	}
-
-	.experience__items {
-		width: 100%;
-	}
+		.experience__items {
+			width: 100%;
+		}
 
 	}
 </style>

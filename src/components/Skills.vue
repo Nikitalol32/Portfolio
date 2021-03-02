@@ -89,6 +89,7 @@ export default {
 		z-index: 3;
 		color: #111;
 		margin-right: 15px;
+		font-weight: 700;
 	}
 
 	@media (max-width: 1250px) {

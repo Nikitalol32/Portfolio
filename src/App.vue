@@ -42,7 +42,7 @@ export default {
 
 	.bg-layer {
 		opacity: 0;
-		z-index: -1;
+		z-index: 3;
 		position: absolute;
 		background-color: #111;
 		transition: opacity .4s ease-in-out;
@@ -50,11 +50,9 @@ export default {
 
 	@media(max-width: 1250px) {
 		.active {
-			background-color: #111;
 			width: 100%;
 			height: 100%;
 			opacity: .85;
-			z-index: 3;
 		}
 	}
 

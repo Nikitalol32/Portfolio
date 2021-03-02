@@ -6,19 +6,19 @@
 		</Title>
 		<div class='contacts'>
 			<div class='contacts__item'>
-				<h4 class='contacts__item_type_header'>Email</h4>
-				<span class='contacts__item_type_text'>nikita320@list.ru</span>
+				<h4 class='contacts__item-header'>Email</h4>
+				<span class='contacts__item-text'>nikita3210@list.ru</span>
 			</div>
 			<div class='contacts__item'>
-				<h4 class='contacts__item_type_header'>Address</h4>
-				<span class='contacts__item_type_text'>Balashiha-city Pavlino-district</span>
+				<h4 class='contacts__item-header'>Address</h4>
+				<span class='contacts__item-text'>Balashiha-city Pavlino-district</span>
 			</div>
 			<div class='contacts__item'>
-				<h4 class='contacts__item_type_header'>Phone</h4>
-				<span class='contacts__item_type_text'>89273273365</span>
+				<h4 class='contacts__item-header'>Phone</h4>
+				<span class='contacts__item-text'>89273273365</span>
 			</div>
 			<div class='contacts__item'>
-				<h4 class='contacts__item_type_header'>Follow Me On</h4>
+				<h4 class='contacts__item-header'>Follow Me On</h4>
 				<ul class='social'>
 					<a href="https://vk.com/holyn0" class="social__link fa fa-vk">
 					</a>
@@ -47,9 +47,13 @@ export default {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: flex-start;
 		width: 100%;
 	}
+
+	.contact-page__titles{
+		margin-top: 55px;
+	}
+
 	.contact-page__subtitle {
 		letter-spacing: 3px;
 	}
@@ -65,20 +69,24 @@ export default {
 		align-items: center;
 		max-width: 1050px;
 		width: 100%;
-		flex-wrap: wrap;
 		height: 300px;
 	}
 
 	.contacts__item {
 		display: flex;
 		flex-direction: column;
-		max-width: 250px;
 		color: #fff;
-		height: 70px;
+		height: 80px;
 	}
 
-	.contacts__item_type_text {
+	.contacts__item-header{
+		letter-spacing: 1.3px;
+		font-size: 18px;
+	}
+
+	.contacts__item-text {
 		margin: 20px 0 0 0;
+		letter-spacing: 1px;
 	}
 
 	.social {
@@ -123,7 +131,7 @@ export default {
 			height: unset;
 		}
 
-		.contacts__item_type_text {
+		.contacts__item-text {
 			margin: 0;
 		}
 	}

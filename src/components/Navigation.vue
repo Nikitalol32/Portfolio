@@ -9,14 +9,14 @@
 			v-on:click = 'rotation'
 		></div>
 		<div
-			class='header__burger header__burger_close'
+			class='header__burger header__burger-close'
 			v-on:click = 'rotation'
 			ref='burger'
 		>
 			<div class='header__burger-layers'>
-				<span class='header__burger-layer header__burger-layer_1'></span>
-				<span class='header__burger-layer header__burger-layer_2'></span>
-				<span class='header__burger-layer header__burger-layer_3'></span>
+				<span class='header__burger-layer header__burger-layer_position_top'></span>
+				<span class='header__burger-layer header__burger-layer_position_middle'></span>
+				<span class='header__burger-layer header__burger-layer_position_bottom'></span>
 			</div>
 		</div>
 		<ul class='nav nav-hidden' ref='nav'>
@@ -45,6 +45,7 @@
 </template>
 
 <script>
+import scrollLock from 'scroll-lock';
 
 export default {
 	data: () => {
@@ -60,16 +61,12 @@ export default {
 		this.$root.$on('openModal', this.onOpenModal);
 		this.$root.$on('closeModal', this.onCloseModal);
 	},
-	beforeDestroy: function () {
-
-	},
 	methods: {
 		onOpenModal: function(){
 			const
 				header = this.$refs.header;
 
 			header.classList.add('disable');
-			console.log(1);
 		},
 		onCloseModal: function() {
 			const
@@ -87,14 +84,15 @@ export default {
 
 			nav.classList.toggle('nav-hidden');
 
-			if(burger.classList.contains('header__burger_open')) {
-				burger.classList.add('header__burger_close');
-				burger.classList.remove('header__burger_open');
+			if(burger.classList.contains('header__burger-open')) {
+				burger.classList.add('header__burger-close');
+				burger.classList.remove('header__burger-open');
+				scrollLock.enablePageScroll();
 
-			} else if(burger.classList.contains('header__burger_close')) {
-				burger.classList.remove('header__burger_close');
-				burger.classList.add('header__burger_open');
-
+			} else if(burger.classList.contains('header__burger-close')) {
+				burger.classList.remove('header__burger-close');
+				burger.classList.add('header__burger-open');
+				scrollLock.disablePageScroll();
 			}
 		}
 	}
@@ -107,8 +105,6 @@ export default {
 		width: 76px;
 		height: 100vh;
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
 		align-items: center;
 		position: fixed;
 		right: 0;
@@ -150,34 +146,34 @@ export default {
 		border-radius: 3px;
 	}
 
-	.header__burger_close
-	.header__burger-layer_1 {
+	.header__burger-close
+	.header__burger-layer_position_top {
 		top: 15px;
 	}
 
-	.header__burger_close
-	.header__burger-layer_2 {
+	.header__burger-close
+	.header__burger-layer_position_middle {
 		top: 25px;
 	}
 
-	.header__burger_close
-	.header__burger-layer_3 {
+	.header__burger-close
+	.header__burger-layer_position_bottom {
 		top: 35px;
 	}
 
-	.header__burger_open
-	.header__burger-layer_1 {
+	.header__burger-open
+	.header__burger-layer_position_top {
 		top: 23px;
 		transform: rotate(-45deg);
 	}
 
-	.header__burger_open
-	.header__burger-layer_2 {
+	.header__burger-open
+	.header__burger-layer_position_middle {
 		transform: translateX(50px);
 	}
 
-	.header__burger_open
-	.header__burger-layer_3 {
+	.header__burger-open
+	.header__burger-layer_position_bottom {
 		top: 23px;
 		transform: rotate(45deg);
 	}
@@ -191,19 +187,17 @@ export default {
 		align-items: center;
 		background-color: #fff;
 		border-radius: 4px;
-		transition-duration: .4s;
+		transition: transform .4s;
 	}
 
 	.nav__item {
-		display: flex;
-		align-items: center;
-		justify-content: center;
 		list-style: none;
 		width: 35px;
 		height: 35px;
 		border-radius: 50%;
 		transition-duration: 0.5s;
 		text-decoration: none;
+		position: relative;
 	}
 
 	.nav__item:hover {
@@ -219,7 +213,6 @@ export default {
 		width: inherit;
 		height: inherit;
 		text-decoration: none;
-		position: relative;
 	}
 
 	.nav__link::before {
@@ -228,7 +221,6 @@ export default {
 		color: white;
 		right: 0px;
 		position: absolute;
-		text-align: center;
 	}
 
 	.nav__item:hover .nav__link::before {
@@ -244,7 +236,6 @@ export default {
 
 	.nav__item:hover .nav__icon {
 		color: #fff;
-		transition-duration: .4s;
 	}
 
 	@media(max-width: 1250px) {
@@ -254,7 +245,6 @@ export default {
 		}
 
 		.nav-hidden {
-			position: absolute;
 			transform: translateX(100px);
 		}
 

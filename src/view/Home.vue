@@ -1,10 +1,10 @@
 <template>
-	<div class='home__content'>
+	<div class='home__page'>
 		<div
-			class='home__content_circle-red'
+			class='home__page-circle_color_red'
 		></div>
 		<div
-			class='home__content-image'>
+			class='home__page-image'>
 			<ImageLoader
 				role='img'
 				aria-label='photo of nikita blinnikov'
@@ -12,14 +12,14 @@
 			/>
 		</div>
 
-		<div class='home__content-wrapper'>
-			<Title class='home__title'>
+		<div class='home__page-wrapper'>
+			<Title class='home__page-title'>
 				<h5 slot='subtitle' class='subtitle'>Hey there!</h5>
 				<h1 slot='title' class='title'>i'm nikita blinnikov</h1>
 			</Title>
 
 			<h5>Frontend developer</h5>
-			<p class='home__content-text'>
+			<p class='home__page-text'>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cupiditate ut molestias reprehenderit ipsa amet nobis. Est, inventore dolorem mollitia voluptas quo sit quibusdam incidunt tempora, maxime, labore aspernatur voluptatibus!
 			</p>
 		
@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style scoped>
-	.home__content {
+	.home__page {
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
@@ -62,11 +62,11 @@ export default {
 		color: white;
 	}
 
-	.home__title {
+	.home__page-title {
 		align-items: flex-start;
 	}
 
-	.home__content_circle-red {
+	.home__page-circle_color_red {
 		background-color: #fc5356;
 		position: absolute;
 		width: 400px;
@@ -76,7 +76,7 @@ export default {
 		border-radius: 50%;
 	}
 
-	.home__content-image {
+	.home__page-image {
 		max-width: 450px;
 		width: 100%;
 		padding: 0 15px;
@@ -85,18 +85,17 @@ export default {
 		position: relative;
 	}
 
-	.home__content-wrapper {
+	.home__page-wrapper {
 		max-width: 550px;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		align-items: flex-start;
 		padding: 15px;
 		margin: 0 65px;
 	}
 
-	.home__content-text {
+	.home__page-text {
 		margin: 15px 0 30px 0;
 		font-size: 17px;
 		line-height: 1.8;
@@ -105,28 +104,25 @@ export default {
 	}
 
 	@media(max-width: 1250px) {
-		.home-page {
-			
-		}
 
-		.home__content {
+		.home__page {
 			justify-content: center;
 			align-items: center;
 		}
 
-		.home__content-image {
+		.home__page-image {
 			display: none;
 		}
 
-		.home__content_circle-red {
+		.home__page-circle_color_red { /* <--- ГОВНО НЕПРАВИЛЬНОЕ */
 			display: none;
 		}
 
-		.home__content-wrapper {
+		.home__page-wrapper {
 			align-items: center;
 		}
 
-		.home__content-text {
+		.home__page-text {
 			text-align: center;
 		}
 		

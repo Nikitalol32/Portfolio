@@ -21,7 +21,6 @@ export default {
 	.experience__item {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-around;
 		align-items: flex-start;
 		padding: 25px;
 		border: 1px solid silver ;
@@ -29,7 +28,6 @@ export default {
 		border-radius: 6px;
 		flex-basis: 20%;
 		min-width: 280px;
-		height: auto;
 	}
 
 	.experience__icon {
@@ -50,10 +48,18 @@ export default {
 		border-radius: 15px;
 		padding: 5px 10px;
 		background-color: rgba(252,83,86,.07);
+		letter-spacing: 2.5px;
+		font-weight: 800;
 	}
 
 	.experience__title {
-		margin: 15px 0 
+		margin: 15px 0;
+		letter-spacing: 2.5px;
+	}
+
+	.experience__text {
+		font-size: 18px;
+		letter-spacing: 1px;
 	}
 
 	@media (max-width: 875px) {

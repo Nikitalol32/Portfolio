@@ -11,7 +11,6 @@
 			<ImageLoader
 				:src='portfolioItem.img'
 				alt='portfolio-image'
-				class='portfolio-item__image'
 				ref='portfolioImg'
 			/>
 		</div>
@@ -67,11 +66,12 @@ export default {
 	}
 
 	.portfolio-item {
+		display: flex;
+		flex-direction: column;
 		margin-bottom: 55px;
 		max-width: 300px;
 		width: 100%;
-		max-height: 449px;
-		height: 100%;
+		height: auto;
 	}
 	.portfolio-item__img-wrapper {
 		display: flex;
@@ -79,24 +79,20 @@ export default {
 		align-items: center;
 		justify-content: center;
 		position: relative;
-		z-index: 1;
 		max-width: 300px;
 		width: 100%;
-		height: 100%;
 	}
 
 	.portfolio-item__img-wrapper::before {
 		content: '';
 		opacity: 0;
 		position: absolute;
-		background-color: linear-gradient(transparent,rgba(0,0,0,0.6));
 		transition: opacity .4s ease;
 	}
 
 	.portfolio-item__view {
 		display: none;
 		position: absolute;
-		z-index: -1;
 		padding: 10px 25px;
 		background-color: transparent;
 		border: 2px solid #fff;
@@ -104,7 +100,7 @@ export default {
 		color: #fff;
 		transition: background-color .2s ease;
 		font-weight: 600;
-		letter-spacing: 1px;
+		letter-spacing: 2px;
 		cursor: pointer;
 	}
 
@@ -121,21 +117,14 @@ export default {
 	}
 
 	.portfolio-item__img-wrapper:hover .portfolio-item__view {
-		z-index: 2;
 		display: flex;
-	}
-
-	.portfolio-item__image {
-		width: 100%;
-		height: auto;
-		object-fit: cover;
 	}
 
 	.portfolio-item__title {
 		flex-direction: column-reverse;
 		width: 100%;
+		margin-top: 0;
 		align-items: flex-start;
-		z-index: 3;
 	}
 
 	.portfolio-item__title > .title {

@@ -23,8 +23,8 @@ export default {
 	.titles {
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-start;
 		align-items: center;
+		margin-top: 55px;
 	}
 
 	.subtitle {
@@ -35,14 +35,14 @@ export default {
 		font-size: 16px;
 		color: #fff;
 		border-radius: 4px;
+		letter-spacing: 2px;
 	}
 
 	.title {
 		text-transform: uppercase;
 		margin: 10px 0;
-		font-weight: 800;
-		font-size: 48px;
-		letter-spacing: 3px;
+		font-size: 44px;
+		letter-spacing: 4px;
 		color: #fff;
 	}
 </style>
